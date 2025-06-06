@@ -1,0 +1,71 @@
+print("Agalar Hub is loading")
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Agalar Hubz",
+   LoadingTitle = "Loading Agalar Hubz",
+   LoadingSubtitle = "By barbaros67890",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "GigaHubConfig"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "gcXEf6N6Em", -- Optional: enable later if needed
+   },
+   KeySystem = false,
+})
+
+local MainTab = Window:CreateTab("Scripts", 4483362458)
+
+MainTab:CreateButton({
+   Name = "Blox Fruits Script",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))(Settings)
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Grow A Garden Script",
+   Callback = function()
+      loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua"))()
+   end,
+})
+
+-- 🔗 Discord Invite Button
+MainTab:CreateButton({
+   Name = "🔗 Join Our Discord",
+   Callback = function()
+      setclipboard("https://discord.gg/gcXEf6N6Em")
+      Rayfield:Notify({
+         Title = "Discord Link Copied",
+         Content = "Paste it in your browser to join the Agalar fam 💬",
+         Duration = 6,
+         Actions = {
+            Okay = {
+               Name = "Bet",
+               Callback = function()
+                  print("User copied Discord invite")
+               end
+            }
+         }
+      })
+   end,
+})
+
+-- 🚀 AUTO-RUN SECTION
+local AutoScripts = {
+   [2753915549] = "https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", -- Blox Fruits
+   [14541585516] = "https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua", -- Grow A Garden
+}
+
+local autoURL = AutoScripts[game.PlaceId]
+if autoURL then
+   Rayfield:Notify({
+      Title = "Auto-Running Script",
+      Content = "Detected supported game. Executing...",
+      Duration = 5,
+   })
+   loadstring(game:HttpGet(autoURL))()
+end
