@@ -40,6 +40,13 @@ MainTab:CreateButton({
    end,
 })
 
+MainTab:CreateButton({
+   Name = "Arsenal",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/andrewdarkyyofficial/thunderclient/main/main.lua"))()
+   end,
+})
+
 -- 🔗 Discord Invite Button
 MainTab:CreateButton({
    Name = "🔗 Join Our Discord",
@@ -66,6 +73,7 @@ local AutoScripts = {
    [2753915549] = "https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", -- Blox Fruits
    [14541585516] = "https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua", -- Grow A Garden
    [116495829188952] = "https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua" --Dead Rails
+   [286090429] = "https://raw.githubusercontent.com/andrewdarkyyofficial/thunderclient/main/main.lua"();"
 }
 
 local autoURL = AutoScripts[game.PlaceId]
