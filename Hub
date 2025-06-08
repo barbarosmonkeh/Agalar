@@ -1,9 +1,10 @@
 print("Agalar Hub is loading")
+
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Agalar Hubz",
-   LoadingTitle = "Loading Agalar Hubz",
+   Name = "Agalar Hub",
+   LoadingTitle = "Loading Agalar Hub",
    LoadingSubtitle = "By barbaros67890",
    ConfigurationSaving = {
       Enabled = true,
@@ -15,6 +16,14 @@ local Window = Rayfield:CreateWindow({
       Invite = "gcXEf6N6Em", -- Optional: enable later if needed
    },
    KeySystem = false,
+
+   Theme = {
+      Accent = Color3.fromRGB(25, 25, 112),       -- Midnight Blue (buttons, highlights)
+      Background = Color3.fromRGB(10, 10, 40),    -- Dark navy background
+      Header = Color3.fromRGB(15, 15, 60),        -- Slightly lighter header
+      TextColor = Color3.fromRGB(230, 230, 255),  -- Soft white text
+      CircleColor = Color3.fromRGB(50, 50, 150)   -- Midnight blue circles/toggles
+   }
 })
 
 local MainTab = Window:CreateTab("Scripts", 4483362458)
@@ -22,7 +31,7 @@ local MainTab = Window:CreateTab("Scripts", 4483362458)
 MainTab:CreateButton({
    Name = "Blox Fruits Script",
    Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))(Settings)
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))()
    end,
 })
 
@@ -47,9 +56,37 @@ MainTab:CreateButton({
    end,
 })
 
+MainTab:CreateButton({
+   Name = "🧠 Infinite Yield",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "The Strongest Battle Grounds",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/TSB.lua"))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Rivals",
+   Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/HexFG/duckhub/refs/heads/main/loader.lua'))()
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Blue Lock Rivals",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/game/refs/heads/main/TbaoHubBlueLockRivals"))()
+   end,
+})
+
 -- 🔗 Discord Invite Button
 MainTab:CreateButton({
-   Name = "🔗 Join Our Discord",
+   Name = "pls join the discord 😭 plus its a cool server",
    Callback = function()
       setclipboard("https://discord.gg/gcXEf6N6Em")
       Rayfield:Notify({
@@ -72,8 +109,11 @@ MainTab:CreateButton({
 local AutoScripts = {
    [2753915549] = "https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau", -- Blox Fruits
    [14541585516] = "https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua", -- Grow A Garden
-   [116495829188952] = "https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua" --Dead Rails
-   [286090429] = "https://raw.githubusercontent.com/andrewdarkyyofficial/thunderclient/main/main.lua"();"
+   [116495829188952] = "https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua", -- Dead Rails
+   [286090429] = "https://raw.githubusercontent.com/andrewdarkyyofficial/thunderclient/main/main.lua", -- Arsenal
+   [10449761463] = "https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/TSB.lua", -- The Strongest Battle Grounds
+   [17625359962] = "https://raw.githubusercontent.com/HexFG/duckhub/refs/heads/main/loader.lua", -- Rivals
+   [18668065416] = "https://raw.githubusercontent.com/tbao143/game/refs/heads/main/TbaoHubBlueLockRivals", -- Blue Lock Rivals
 }
 
 local autoURL = AutoScripts[game.PlaceId]
